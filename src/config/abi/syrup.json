@@ -2,7 +2,7 @@
   {
     "inputs": [
       {
-        "internalType": "contract NyanToken",
+        "internalType": "contract CakeToken",
         "name": "_cake",
         "type": "address"
       }
@@ -245,7 +245,7 @@
     "name": "cake",
     "outputs": [
       {
-        "internalType": "contract NyanToken",
+        "internalType": "contract CakeToken",
         "name": "",
         "type": "address"
       }

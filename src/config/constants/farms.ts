@@ -21,12 +21,12 @@ const farms: FarmConfig[] = [
     pid: 1,
     lpSymbol: 'NYAN-BNB LP',
     lpAddresses: {
-      97: '0x759a31a5087eE60BD57d74fC1088EC62F2c211af',
+      97: '0xD7A340Be68e5d115a871727F9189cca1886E811F',
       56: '0x76848b57b9ce6a73f6546de4143956a858f537c2',
     },
     tokenSymbol: 'NYAN',
     tokenAddresses: {
-      97: '0x759a31a5087eE60BD57d74fC1088EC62F2c211af',
+      97: '0xD7A340Be68e5d115a871727F9189cca1886E811F',
       56: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
     },
     quoteTokenSymbol: QuoteToken.BNB,
@@ -41,7 +41,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'BUSD',
     tokenAddresses: {
-      97: '0x759a31a5087eE60BD57d74fC1088EC62F2c211af',
+      97: '0xD7A340Be68e5d115a871727F9189cca1886E811F',
       56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
     },
     quoteTokenSymbol: QuoteToken.NYAN,

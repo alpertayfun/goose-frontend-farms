@@ -6,7 +6,7 @@ const farms: FarmConfig[] = [
     pid: 0,
     lpSymbol: 'NYAN',
     lpAddresses: {
-      97: '0x9C21123D94b93361a29B2C2EFB3d5CD8B17e0A9e',
+      97: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
       56: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
     },
     tokenSymbol: 'CATNIP',

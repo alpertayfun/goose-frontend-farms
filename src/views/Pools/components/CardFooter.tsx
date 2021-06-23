@@ -101,12 +101,7 @@ const CardFooter: React.FC<Props> = ({
         <Details>
           <Row style={{ marginBottom: '4px' }}>
             <FlexFull>
-              <Label>
-                <span role="img" aria-label="syrup">
-                  🥞{' '}
-                </span>
-                {TranslateString(408, 'Total')}
-              </Label>
+              <Label>{TranslateString(408, 'Total')}</Label>
             </FlexFull>
             <Balance fontSize="14px" isDisabled={isFinished} value={getBalanceNumber(totalStaked)} />
           </Row>

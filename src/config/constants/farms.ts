@@ -18,7 +18,7 @@ const farms: FarmConfig[] = [
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,
   },
-{
+  {
     pid: 1,
     risk: 1,
     lpSymbol: 'NYAN2-ETH LP',

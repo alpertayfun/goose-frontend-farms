@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Image, Button } from '@pancakeswap-libs/uikit'
+import { Image, Button } from 'yieldnyan-uikit'
 import { CommunityTag } from 'components/Tags'
 import useI18n from 'hooks/useI18n'
 import Card from './Card'
@@ -49,7 +49,7 @@ const Coming: React.FC = () => {
         <Button
           variant="secondary"
           as="a"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScGdT5rrVMr4WOWr08pvcroSeuIOtEJf1sVdQGVdcAOqryigQ/viewform"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSciX7iE8Z9iFkY_cP6fgpG2j4RdBBuxJPD9MFnDZvA3T2THyQ/viewform"
           external
           fullWidth
           mb="16px"
@@ -63,11 +63,11 @@ const Coming: React.FC = () => {
         <DetailPlaceholder>
           <div style={{ flex: 1 }}>
             <span role="img" aria-label="syrup">
-              🥞{' '}
+              🐈{' '}
             </span>
             {TranslateString(384, 'Your Stake')}:
           </div>
-          <Value>??? CAKE</Value>
+          <Value>??? NYAN</Value>
         </DetailPlaceholder>
       </div>
       <Footer>

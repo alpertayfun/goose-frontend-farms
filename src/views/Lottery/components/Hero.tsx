@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text } from '@pancakeswap-libs/uikit'
+import { Heading, Text } from 'yieldnyan-uikit'
 import useI18n from 'hooks/useI18n'
 import Container from 'components/layout/Container'
 import LotteryProgress from './LotteryProgress'
@@ -11,13 +11,13 @@ const Title = styled(Heading).attrs({ as: 'h1', size: 'xl' })`
 `
 
 const Blurb = styled(Text)`
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.text};
   font-size: 20px;
   font-weight: 600;
 `
 
 const StyledHero = styled.div`
-  background-image: linear-gradient(180deg, #53dee9 0%, #1fc7d4 100%);
+  background-color: #fcece8;
   padding-bottom: 40px;
   padding-top: 40px;
 `
@@ -70,8 +70,8 @@ const Hero = () => {
     <StyledHero>
       <StyledContainer>
         <LeftWrapper>
-          <Title>{TranslateString(999, 'The CAKE Lottery')}</Title>
-          <Blurb>{TranslateString(999, 'Buy tickets with CAKE')}</Blurb>
+          <Title color="menutext">{TranslateString(999, 'The CAT Lottery')}</Title>
+          <Blurb>{TranslateString(999, 'Buy tickets with NYAN')}</Blurb>
           <Blurb>{TranslateString(999, 'Win if 2, 3, or 4 of your ticket numbers match!')}</Blurb>
         </LeftWrapper>
         <RightWrapper>

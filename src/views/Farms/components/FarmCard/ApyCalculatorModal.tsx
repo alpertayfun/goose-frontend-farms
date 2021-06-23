@@ -1,20 +1,16 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
-import { Modal, Text, LinkExternal, Flex } from '@pancakeswap-libs/uikit'
+import { Modal, Text, LinkExternal, Flex } from 'yieldnyan-uikit'
 import useI18n from 'hooks/useI18n'
-import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { calculateCakeEarnedPerThousandDollars, apyModalRoi } from 'utils/compoundApyHelpers'
-import { Address } from 'config/constants/types'
 
 interface ApyCalculatorModalProps {
   onDismiss?: () => void
   lpLabel?: string
   cakePrice?: BigNumber
   apy?: BigNumber
-  quoteTokenAdresses?: Address
-  quoteTokenSymbol?: string
-  tokenAddresses: Address
+  addLiquidityUrl?: string
 }
 
 const Grid = styled.div`
@@ -36,14 +32,11 @@ const Description = styled(Text)`
 const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   onDismiss,
   lpLabel,
-  quoteTokenAdresses,
-  quoteTokenSymbol,
-  tokenAddresses,
   cakePrice,
   apy,
+  addLiquidityUrl,
 }) => {
   const TranslateString = useI18n()
-  const liquidityUrlPathParts = getLiquidityUrlPathParts({ quoteTokenAdresses, quoteTokenSymbol, tokenAddresses })
   const farmApy = apy.times(new BigNumber(100)).toNumber()
   const oneThousandDollarsWorthOfCake = 1000 / cakePrice.toNumber()
 
@@ -67,7 +60,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase" mb="20px">
-            {TranslateString(999, 'EGG per $1000')}
+            {TranslateString(999, 'NYAN per $1000')}
           </Text>
         </GridItem>
         {/* 1 day row */}
@@ -126,7 +119,7 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         )}
       </Description>
       <Flex justifyContent="center">
-        <LinkExternal href={`https://exchange.pancakeswap.finance/#/add/${liquidityUrlPathParts}`}>
+        <LinkExternal href={addLiquidityUrl}>
           {TranslateString(999, 'Get')} {lpLabel}
         </LinkExternal>
       </Flex>

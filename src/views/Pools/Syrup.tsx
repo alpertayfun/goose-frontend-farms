@@ -3,7 +3,7 @@ import { Route, useRouteMatch } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Heading } from '@pancakeswap-libs/uikit'
+import { Heading, Text } from 'yieldnyan-uikit'
 import { BLOCKS_PER_YEAR } from 'config'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
@@ -68,20 +68,17 @@ const Farm: React.FC = () => {
   return (
     <Page>
       <Hero>
-        <div>
-          <Heading as="h1" size="xxl" mb="16px">
-            {TranslateString(282, 'SYRUP Pool')}
-          </Heading>
-          <ul>
-            <li>{TranslateString(580, 'Stake CAKE to earn new tokens.')}</li>
-            <li>{TranslateString(404, 'You can unstake at any time.')}</li>
-            <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
-          </ul>
-        </div>
-        <img src="/images/syrup.png" alt="SYRUP POOL icon" width={410} height={191} />
+        <Heading as="h1" size="xl" mb="24px" color="secondary">
+          {TranslateString(282, 'CATNIP Pool')}
+        </Heading>
+        <Text>
+          {TranslateString(
+            580,
+            'Stake NYAN to earn new tokens.You can unstake at any time.Rewards are calculated per block.',
+          )}
+        </Text>
       </Hero>
       <PoolTabButtons />
-      <Divider />
       <FlexLayout>
         <Route exact path={`${path}`}>
           <>
@@ -104,9 +101,7 @@ const Farm: React.FC = () => {
 const Hero = styled.div`
   align-items: center;
   color: ${({ theme }) => theme.colors.primary};
-  display: grid;
-  grid-gap: 32px;
-  grid-template-columns: 1fr;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   max-width: 250px;
@@ -125,7 +120,6 @@ const Hero = styled.div`
     max-width: 100%;
   }
   @media (min-width: 576px) {
-    grid-template-columns: 1fr 1fr;
     margin: 0;
     max-width: none;
   }

@@ -1,38 +1,36 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button } from '@pancakeswap-libs/uikit'
+import { Heading, Card, CardBody, Button } from 'yieldnyan-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import BigNumber from 'bignumber.js'
 import useI18n from 'hooks/useI18n'
 import { useAllHarvest } from 'hooks/useHarvest'
 import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
 import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
-import { usePriceCakeBusd } from '../../../state/hooks'
-import useTokenBalance from '../../../hooks/useTokenBalance'
-import { getCakeAddress } from '../../../utils/addressHelpers'
-import useAllEarnings from '../../../hooks/useAllEarnings'
-import { getBalanceNumber } from '../../../utils/formatBalance'
 
 const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/egg/2a.png');
-  background-repeat: no-repeat;
-  background-position: top right;
+margin-top:140px;
+overflow: visible;
+  padding: 10px;
+  box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
   min-height: 376px;
 `
 
 const Block = styled.div`
-  margin-bottom: 16px;
+margin-top: 70px;
+position: absolute;
 `
 
 const CardImage = styled.img`
-  margin-bottom: 16px;
+float: right;
+z-index:-99;
 `
 
 const Label = styled.div`
-  color: ${({ theme }) => theme.colors.textSubtle};
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 14px;
+  white-space: nowrap!important;
 `
 
 const Actions = styled.div`
@@ -44,12 +42,6 @@ const FarmedStakingCard = () => {
   const { account } = useWallet()
   const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
-  const cakeBalance = getBalanceNumber(useTokenBalance(getCakeAddress()))
-  const eggPrice = usePriceCakeBusd().toNumber()
-  const allEarnings = useAllEarnings()
-  const earningsSum = allEarnings.reduce((accum, earning) => {
-    return accum + new BigNumber(earning).div(new BigNumber(10).pow(18)).toNumber()
-  }, 0)
   const balancesWithValue = farmsWithBalance.filter((balanceType) => balanceType.balance.toNumber() > 0)
 
   const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
@@ -67,21 +59,20 @@ const FarmedStakingCard = () => {
 
   return (
     <StyledFarmStakingCard>
+       <CardImage  style={{position:"absolute",left:"-10px",top:"-180px"}} src="/images/cats_one.png" alt="cake logo" width={314}  />
       <CardBody>
-        <Heading size="xl" mb="24px">
+        <Heading size="llg" mb="24px">
           {TranslateString(542, 'Farms & Staking')}
         </Heading>
-        <CardImage src="/images/egg/2.png" alt="cake logo" width={64} height={64} />
-        <Block>
-          <Label>{TranslateString(544, 'EGG to Harvest')}</Label>
-          <CakeHarvestBalance earningsSum={earningsSum} />
-          <Label>~${(eggPrice * earningsSum).toFixed(2)}</Label>
+       
+
+        <Block >
+          <CakeHarvestBalance />
+          <Label>{TranslateString(544, 'NYAN to Harvest')}</Label>
+          <CakeWalletBalance />
+          <Label>{TranslateString(546, 'NYAN in Wallet')}</Label>
         </Block>
-        <Block>
-          <Label>{TranslateString(546, 'EGG in Wallet')}</Label>
-          <CakeWalletBalance cakeBalance={cakeBalance} />
-          <Label>~${(eggPrice * cakeBalance).toFixed(2)}</Label>
-        </Block>
+        <CardImage style={{position:"relative",right:"-100px",top:"-40px",zIndex:"auto"}} src="/images/cat_two.png" alt="cake logo" width={280} height={300} />
         <Actions>
           {account ? (
             <Button
@@ -91,7 +82,7 @@ const FarmedStakingCard = () => {
               fullWidth
             >
               {pendingTx
-                ? TranslateString(548, 'Collecting EGG')
+                ? TranslateString(548, 'Collecting NYAN')
                 : TranslateString(999, `Harvest all (${balancesWithValue.length})`)}
             </Button>
           ) : (

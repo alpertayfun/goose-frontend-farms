@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import useI18n from 'hooks/useI18n'
-import { Card, CardBody, Heading, Text } from '@pancakeswap-libs/uikit'
+import { Card, CardBody, Heading, Text } from 'yieldnyan-uikit'
 import UnlockButton from 'components/UnlockButton'
 import { NftProviderContext } from '../contexts/NftProvider'
 import NoNftsToClaimCard from './NoNftsToClaimCard'
-import YouWonCard from './YouWonCard'
 import NftInWalletCard from './NftInWalletCard'
 
 /**
@@ -18,7 +17,7 @@ import NftInWalletCard from './NftInWalletCard'
  */
 const StatusCard = () => {
   const { account } = useWallet()
-  const { isInitialized, canClaim, hasClaimed, balanceOf } = useContext(NftProviderContext)
+  const { isInitialized, balanceOf } = useContext(NftProviderContext)
   const TranslateString = useI18n()
 
   if (!account) {
@@ -35,10 +34,6 @@ const StatusCard = () => {
 
   if (!isInitialized) {
     return <Text>...</Text>
-  }
-
-  if (!hasClaimed && canClaim) {
-    return <YouWonCard />
   }
 
   if (balanceOf > 0) {

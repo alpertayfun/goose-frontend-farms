@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Heading, Text } from '@pancakeswap-libs/uikit'
+import { Button, Heading, Text } from 'yieldnyan-uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import Container from 'components/layout/Container'
@@ -35,13 +35,13 @@ const RegisterToWinPage = () => {
             NFTs
           </Heading>
           <Heading as="h2" size="lg" color="secondary" mb="16px">
-            {TranslateString(614, 'Trade in for CAKE, or keep for your collection!')}
+            {TranslateString(614, 'Trade in for NYAN, or keep for your collection!')}
           </Heading>
           <Text mb="24px">{TranslateString(616, 'Register your interest in winning an NFT below.')}</Text>
           <Cta>
             <Button
               as="a"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfToBNlovtMvTZFSwOhk0TBiDPMGasLxqG0RB-kJN85HR_avA/viewform"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSciX7iE8Z9iFkY_cP6fgpG2j4RdBBuxJPD9MFnDZvA3T2THyQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
             >

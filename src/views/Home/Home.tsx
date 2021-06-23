@@ -1,19 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text, BaseLayout } from '@pancakeswap-libs/uikit'
+import { Heading, Text, BaseLayout } from 'yieldnyan-uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
-import FarmStakingCard from './components/FarmStakingCard'
-import LotteryCard from './components/LotteryCard'
-import CakeStats from './components/CakeStats'
-import TotalValueLockedCard from './components/TotalValueLockedCard'
-import TwitterCard from './components/TwitterCard'
+import FarmStakingCard from 'views/Home/components/FarmStakingCard'
+import CakeStats from 'views/Home/components/CakeStats'
+import PageHome from 'components/layout/PageHome'
 
 const Hero = styled.div`
-  align-items: center;
-  background-image: url('/images/egg/3.png');
-  background-repeat: no-repeat;
-  background-position: top center;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -23,8 +17,6 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/egg/3.png'), url('/images/egg/3b.png');
-    background-position: left center, right center;
     height: 165px;
     padding-top: 0;
   }
@@ -33,11 +25,11 @@ const Hero = styled.div`
 const Cards = styled(BaseLayout)`
   align-items: stretch;
   justify-content: stretch;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 
   & > div {
     grid-column: span 6;
-    width: 100%;
+    width: 90%;
   }
 
   ${({ theme }) => theme.mediaQueries.sm} {
@@ -57,22 +49,27 @@ const Home: React.FC = () => {
   const TranslateString = useI18n()
 
   return (
+    <PageHome>
     <Page>
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
-          {TranslateString(576, 'Goose Finance')}
+          {TranslateString(576, 'YieldNyan')}
         </Heading>
-        <Text>{TranslateString(578, 'Top 3 best DEFI app on Binance Smart Chain.')}</Text>
+        <Text>{TranslateString(578, 'Yield Farming on Binance Smart Chain with Lovely Nyan Cats.')}</Text>
       </Hero>
       <div>
         <Cards>
           <FarmStakingCard />
-          <TwitterCard />
+          {/* <LotteryCard /> */}
+          <CakeStats />
+        </Cards>
+        {/* <Cards>
           <CakeStats />
           <TotalValueLockedCard />
-        </Cards>
+        </Cards> */}
       </div>
     </Page>
+    </PageHome>
   )
 }
 

@@ -1,15 +1,14 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Text } from '@pancakeswap-libs/uikit'
+import { Text } from 'yieldnyan-uikit'
 
 interface CardValueProps {
   value: number
   decimals?: number
   fontSize?: string
-  prefix?: string
 }
 
-const CardValue: React.FC<CardValueProps> = ({ value, decimals, fontSize = '40px', prefix }) => {
+const CardValue: React.FC<CardValueProps> = ({ value, decimals, fontSize = '40px' }) => {
   const { countUp, update } = useCountUp({
     start: 0,
     end: value,
@@ -27,8 +26,7 @@ const CardValue: React.FC<CardValueProps> = ({ value, decimals, fontSize = '40px
   }, [value, updateValue])
 
   return (
-    <Text bold fontSize={fontSize}>
-      {prefix}
+    <Text bold fontSize={fontSize} color="primary">
       {countUp}
     </Text>
   )

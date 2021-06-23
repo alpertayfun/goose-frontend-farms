@@ -1,7 +1,6 @@
 import React from 'react'
-import { ModalProvider } from '@pancakeswap-libs/uikit'
-// import bsc, { UseWalletProvider } from '@binance-chain/bsc-use-wallet'
-import * as bsc from '@binance-chain/bsc-use-wallet'
+import { ModalProvider } from 'yieldnyan-uikit'
+import bsc, { UseWalletProvider } from '@binance-chain/bsc-use-wallet'
 import { Provider } from 'react-redux'
 import getRpcUrl from 'utils/getRpcUrl'
 import { LanguageContextProvider } from 'contexts/Localisation/languageContext'
@@ -12,13 +11,13 @@ import store from 'state'
 
 const Providers: React.FC = ({ children }) => {
   const rpcUrl = getRpcUrl()
-  const chainId = parseInt(process.env.REACT_APP_CHAIN_ID)
+
   return (
     <Provider store={store}>
       <ThemeContextProvider>
         <LanguageContextProvider>
-          <bsc.UseWalletProvider
-            chainId={chainId}
+          <UseWalletProvider
+            chainId={parseInt(process.env.REACT_APP_CHAIN_ID)}
             connectors={{
               walletconnect: { rpcUrl },
               bsc,
@@ -29,7 +28,7 @@ const Providers: React.FC = ({ children }) => {
                 <ModalProvider>{children}</ModalProvider>
               </RefreshContextProvider>
             </BlockContextProvider>
-          </bsc.UseWalletProvider>
+          </UseWalletProvider>
         </LanguageContextProvider>
       </ThemeContextProvider>
     </Provider>

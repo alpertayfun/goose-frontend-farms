@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Ticket } from '@pancakeswap-libs/uikit'
+import { Heading, Card, CardBody, Ticket, Text } from 'yieldnyan-uikit'
 import useI18n from 'hooks/useI18n'
 import UnlockButton from 'components/UnlockButton'
 
@@ -9,10 +9,13 @@ const StyledCardBody = styled(CardBody)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 310px;
+  padding: 30px;
 `
 
 const StyledHeading = styled(Heading)`
   margin: 16px 0;
+  font-size: 22px;
 `
 
 const IconWrapper = styled.div`
@@ -31,7 +34,9 @@ const UnlockWalletCard = () => {
         <IconWrapper>
           <Ticket />
         </IconWrapper>
-        <StyledHeading size="md">{TranslateString(999, 'Unlock wallet to access lottery')}</StyledHeading>
+        <StyledHeading size="md" color="text">
+          {TranslateString(999, 'Unlock wallet to access lottery')}
+        </StyledHeading>
         <UnlockButton />
       </StyledCardBody>
     </Card>

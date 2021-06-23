@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
-import { Image, Card, CardBody } from '@pancakeswap-libs/uikit'
+import { Image, Card, CardBody, Text } from 'yieldnyan-uikit'
 import { useWinningNumbers, useMatchingRewardLength } from 'hooks/useTickets'
 import useI18n from 'hooks/useI18n'
 import useGetLotteryHasDrawn from 'hooks/useGetLotteryHasDrawn'
@@ -21,11 +21,12 @@ const WinningNumbers: React.FC = () => {
         <CardBody>
           <StyledCardContentInner>
             <StyledCardHeader>
-              <Title>
+              <Text fontSize="32px" bold color="text">
                 {account && lotteryHasDrawn
                   ? `🥳${TranslateString(570, 'Winning Numbers This Round')}🥳`
                   : TranslateString(572, 'Latest Winning Numbers')}
-              </Title>
+              </Text>
+
               <br />
             </StyledCardHeader>
             <Row>
@@ -36,50 +37,7 @@ const WinningNumbers: React.FC = () => {
                 </TicketNumberBox>
               ))}
             </Row>
-            <RabbitRow>
-              <RabbitBox>
-                <CardImageFirst>
-                  <Image src="/images/sign bunny 1@2x.png" alt="Number 1" width={200} height={150} responsive />
-                </CardImageFirst>
-              </RabbitBox>
-              <RabbitBox>
-                <CardImage style={{ marginLeft: '-1.2em' }}>
-                  <Image src="/images/sign bunny 2@2x.png" alt="Number 2" width={200} height={150} responsive />
-                </CardImage>
-              </RabbitBox>
-              <RabbitBox>
-                <CardImage style={{ marginLeft: '-1.2em' }}>
-                  <Image src="/images/sign bunny 3@2x.png" alt="Number 3" width={200} height={150} responsive />
-                </CardImage>
-              </RabbitBox>
-              <RabbitBox>
-                <CardImage style={{ marginLeft: '-1.2em' }}>
-                  <Image src="/images/sign bunny 4@2x.png" alt="Number 4" width={200} height={150} responsive />
-                </CardImage>
-              </RabbitBox>
-            </RabbitRow>
-            <RabbitRowSmall>
-              <RabbitBoxSmall>
-                <CardImageFirst>
-                  <Image src="/images/sign bunny 1@2x.png" alt="Number 1" width={200} height={150} responsive />
-                </CardImageFirst>
-              </RabbitBoxSmall>
-              <RabbitBoxSmall>
-                <CardImage style={{ marginLeft: '-1.2em' }}>
-                  <Image src="/images/sign bunny 2@2x.png" alt="Number 2" width={200} height={150} responsive />
-                </CardImage>
-              </RabbitBoxSmall>
-              <RabbitBoxSmall>
-                <CardImage style={{ marginLeft: '-1.2em' }}>
-                  <Image src="/images/sign bunny 3@2x.png" alt="Number 3" width={200} height={150} responsive />
-                </CardImage>
-              </RabbitBoxSmall>
-              <RabbitBoxSmall>
-                <CardImage style={{ marginLeft: '-1.2em' }}>
-                  <Image src="/images/sign bunny 4@2x.png" alt="Number 4" width={200} height={150} responsive />
-                </CardImage>
-              </RabbitBoxSmall>
-            </RabbitRowSmall>
+
             <Column>
               <RowNoPadding>
                 <CenteredTextWithPadding>{TranslateString(442, 'Tickets matching 4 numbers:')}</CenteredTextWithPadding>
@@ -173,6 +131,7 @@ const Column = styled.div`
 const CenteredText = styled.div`
   text-align: center;
   align-items: center;
+  padding: 20px;
 `
 
 const CenteredTextWithPadding = styled.div`
@@ -183,15 +142,14 @@ const CenteredTextWithPadding = styled.div`
 `
 
 const TicketNumberBox = styled.div`
-  padding: 10px;
-  border-radius: 12px;
-  background: linear-gradient(180deg, #54dade 0%, #24c7d6 76.22%);
+  border-radius: 16px;
+  background: #fa6241;
   color: white;
   font-size: 20px;
   font-weight: 900;
   margin: 10px;
   margin-bottom: 7px;
-  width: 40px;
+  width: 60px;
 
   @media (min-width: 768px) {
     font-size: 40px;
@@ -221,7 +179,11 @@ const StyledCardHeader = styled.div`
   flex-direction: column;
 `
 
-const CardWrapper = styled.div``
+const CardWrapper = styled.div`
+  margin: 45px 100px 45px 100px;
+  border-radius: 16px;
+  box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
+`
 
 const Title = styled.div`
   color: ${(props) => props.theme.colors.secondary};

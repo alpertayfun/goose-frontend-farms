@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button, useModal } from '@pancakeswap-libs/uikit'
+import { Heading, Card, CardBody, Button, useModal, Text } from 'yieldnyan-uikit'
 import { getCakeAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
 import useI18n from 'hooks/useI18n'
@@ -13,9 +13,8 @@ import CakeWinnings from './CakeWinnings'
 import LotteryJackpot from './LotteryJackpot'
 
 const StyledLotteryCard = styled(Card)`
-  background-image: url('/images/ticket-bg.svg');
-  background-repeat: no-repeat;
-  background-position: top right;
+  padding: 30px;
+  box-shadow: -8px 12px 18px 0 rgba(25, 42, 70, 0.13);
   min-height: 376px;
 `
 
@@ -24,7 +23,9 @@ const Block = styled.div`
 `
 
 const CardImage = styled.img`
-  margin-bottom: 16px;
+  float: right;
+  margin-bottom: 50px;
+  margin-top: 50px;
 `
 
 const Label = styled.div`
@@ -34,7 +35,7 @@ const Label = styled.div`
 
 const Actions = styled.div`
   display: flex;
-  margin-top: 24px;
+  margin-top: 67px;
   button {
     flex: 1 0 50%;
   }
@@ -61,22 +62,24 @@ const FarmedStakingCard = () => {
     }
   }, [onMultiClaim, setRequestedClaim])
 
-  const [onPresentBuy] = useModal(<BuyModal max={cakeBalance} tokenName="CAKE" />)
+  const [onPresentBuy] = useModal(<BuyModal max={cakeBalance} tokenName="NYAN" />)
 
   return (
     <StyledLotteryCard>
       <CardBody>
-        <Heading size="xl" mb="24px">
+        <Heading size="llg" mb="24px">
           {TranslateString(550, 'Your Lottery Winnings')}
         </Heading>
-        <CardImage src="/images/ticket.svg" alt="cake logo" width={64} height={64} />
+        <CardImage src="/images/money-bag.svg" alt="cake logo" width={124} height={142} />
         <Block>
           <CakeWinnings />
-          <Label>{TranslateString(552, 'CAKE to Collect')}</Label>
+
+          <Text color="text">{TranslateString(552, 'to Collect')}</Text>
         </Block>
         <Block>
           <LotteryJackpot />
-          <Label>{TranslateString(554, 'Total jackpot this round')}</Label>
+
+          <Text color="text">{TranslateString(554, 'Total jackpot this round')}</Text>
         </Block>
         <Actions>
           <Button

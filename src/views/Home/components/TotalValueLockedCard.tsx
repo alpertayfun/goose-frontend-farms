@@ -1,37 +1,53 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading, Skeleton, Text } from '@pancakeswap-libs/uikit'
+import { Card, CardBody, Heading, Skeleton, Text } from 'yieldnyan-uikit'
 import useI18n from 'hooks/useI18n'
-import { useGetStats } from 'hooks/api'
-import { useTotalValue } from '../../../state/hooks'
-import CardValue from './CardValue'
+import { useFarms, usePriceBnbBusd, usePriceCakeBusd } from 'state/hooks'
+import { QuoteToken } from 'config/constants/types'
+import BigNumber from 'bignumber.js'
 
 const StyledTotalValueLockedCard = styled(Card)`
+  padding: 24px;
   align-items: center;
-  display: flex;
   flex: 1;
+  box-shadow:none;
 `
 
 const TotalValueLockedCard = () => {
   const TranslateString = useI18n()
-  // const data = useGetStats()
-  const totalValue = useTotalValue()
-  // const tvl = totalValue.toFixed(2);
+  const farmsLP = useFarms()
+  const cakePrice = usePriceCakeBusd()
+  const bnbPrice = usePriceBnbBusd()
 
+  let tvl = new BigNumber(0)
+  for (let i = 0; i < farmsLP.length; i++) {
+    const farm = farmsLP[i]
+    if (!farm.lpTotalInQuoteToken) {
+      //
+    } else if (farm.quoteTokenSymbol === QuoteToken.BNB) {
+      tvl = tvl.plus(new BigNumber(farm.lpTotalInQuoteToken).times(bnbPrice))
+    } else if (farm.quoteTokenSymbol === QuoteToken.NYAN) {
+      tvl = tvl.plus(cakePrice.times(farm.lpTotalInQuoteToken))
+    } else {
+      tvl = tvl.plus(farm.lpTotalInQuoteToken)
+    }
+  }
+  const total = (tvl.toNumber()).toLocaleString()
   return (
     <StyledTotalValueLockedCard>
-      <CardBody>
-        <Heading size="lg" mb="24px">
-          {TranslateString(999, 'Total Value Locked (TVL)')}
-        </Heading>
+      <Heading size="llg" mb="24px">
+        {TranslateString(999, 'Total Value Locked (TVL)')}
+      </Heading>
+      {total ? (
         <>
-          {/* <Heading size="xl">{`$${tvl}`}</Heading> */}
-          {/* <Heading size="xl"> */}
-          <CardValue value={totalValue.toNumber()} prefix="$" decimals={2} />
-          {/* </Heading> */}
-          <Text color="textSubtle">{TranslateString(999, 'Across all Farms and Pools')}</Text>
+          <Heading size="xl" color="primary">{`$${total}`}</Heading>
+          <Text color="text">{TranslateString(999, 'Across all LPs and Catnip Pools')}</Text>
         </>
-      </CardBody>
+      ) : (
+          <>
+            <Skeleton height={66} />
+          </>
+        )}
     </StyledTotalValueLockedCard>
   )
 }

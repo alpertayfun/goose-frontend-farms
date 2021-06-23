@@ -23,9 +23,13 @@ export enum QuoteToken {
   'BNB' = 'BNB',
   'CAKE' = 'CAKE',
   'SYRUP' = 'SYRUP',
+  'NYAN' = 'NYAN',
+  'CATNIP' = 'CATNIP',
   'BUSD' = 'BUSD',
+  'DAI' = 'DAI',
   'TWT' = 'TWT',
   'UST' = 'UST',
+  'ETH' = 'ETH',
 }
 
 export enum PoolCategory {
@@ -48,9 +52,7 @@ export interface FarmConfig {
   quoteTokenSymbol: QuoteToken
   quoteTokenAdresses: Address
   multiplier?: string
-  isTokenOnly?: boolean
   isCommunity?: boolean
-  risk: number
   dual?: {
     rewardPerBlock: number
     earnLabel: string
@@ -75,12 +77,37 @@ export interface PoolConfig {
   tokenDecimals: number
 }
 
+export type Images = {
+  lg: string
+  md: string
+  sm: string
+  ipfs?: string
+}
+
+export type NftImages = {
+  blur: string
+} & Images
+
 export type Nft = {
   name: string
   description: string
-  originalImage: string
-  previewImage: string
-  blurImage: string
+  images: NftImages
   sortOrder: number
   bunnyId: number
+}
+
+export type TeamImages = {
+  alt: string
+} & Images
+
+export type Team = {
+  id: number
+  name: string
+  description: string
+  isJoinable?: boolean
+  users: number
+  points: number
+  images: TeamImages
+  background: string
+  textColor: string
 }

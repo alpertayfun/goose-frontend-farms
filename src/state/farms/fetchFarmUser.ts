@@ -11,7 +11,7 @@ export const fetchFarmUserAllowances = async (account: string) => {
   const masterChefAdress = getMasterChefAddress()
 
   const calls = farmsConfig.map((farm) => {
-    const lpContractAddress = farm.isTokenOnly ? farm.tokenAddresses[CHAIN_ID] : farm.lpAddresses[CHAIN_ID]
+    const lpContractAddress = farm.lpAddresses[CHAIN_ID]
     return { address: lpContractAddress, name: 'allowance', params: [account, masterChefAdress] }
   })
 
@@ -24,7 +24,7 @@ export const fetchFarmUserAllowances = async (account: string) => {
 
 export const fetchFarmUserTokenBalances = async (account: string) => {
   const calls = farmsConfig.map((farm) => {
-    const lpContractAddress = farm.isTokenOnly ? farm.tokenAddresses[CHAIN_ID] : farm.lpAddresses[CHAIN_ID]
+    const lpContractAddress = farm.lpAddresses[CHAIN_ID]
     return {
       address: lpContractAddress,
       name: 'balanceOf',
@@ -63,7 +63,7 @@ export const fetchFarmUserEarnings = async (account: string) => {
   const calls = farmsConfig.map((farm) => {
     return {
       address: masterChefAdress,
-      name: 'pendingEgg',
+      name: 'pendingCake',
       params: [farm.pid, account],
     }
   })

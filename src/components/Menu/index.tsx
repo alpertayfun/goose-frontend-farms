@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
+import { Menu as UikitMenu } from 'yieldnyan-uikit'
 import { useWallet } from '@binance-chain/bsc-use-wallet'
 import { allLanguages } from 'config/localisation/languageCodes'
 import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
-import { usePriceCakeBusd } from 'state/hooks'
-import { Menu as UikitMenu } from '@pancakeswap-libs/uikit'
+import { usePriceCakeBusd, useProfile } from 'state/hooks'
 import config from './config'
 
 const Menu = (props) => {
@@ -12,6 +12,7 @@ const Menu = (props) => {
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
   const { isDark, toggleTheme } = useTheme()
   const cakePriceUsd = usePriceCakeBusd()
+  const { profile } = useProfile()
 
   return (
     <UikitMenu
@@ -25,7 +26,13 @@ const Menu = (props) => {
       setLang={setSelectedLanguage}
       cakePriceUsd={cakePriceUsd.toNumber()}
       links={config}
-      priceLink="https://www.coingecko.com/en/coins/goose-finance"
+      profile={{
+        username: profile?.username,
+        image: profile?.username ? `/images/nfts/${profile?.nft.images.sm}` : undefined,
+        profileLink: '/profile',
+        noProfileLink: '/profile',
+        showPip: !profile?.username,
+      }}
       {...props}
     />
   )

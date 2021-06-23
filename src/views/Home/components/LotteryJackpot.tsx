@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@pancakeswap-libs/uikit'
+import { Text } from 'yieldnyan-uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalRewards } from 'hooks/useTickets'
 
@@ -7,7 +7,7 @@ const LotteryJackpot = () => {
   const lotteryPrizeAmount = useTotalRewards()
 
   return (
-    <Text bold fontSize="24px">
+    <Text bold fontSize="30px" color="primary">
       {getBalanceNumber(lotteryPrizeAmount).toLocaleString(undefined, {
         maximumFractionDigits: 2,
       })}

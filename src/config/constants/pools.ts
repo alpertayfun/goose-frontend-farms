@@ -3,7 +3,7 @@ import { PoolConfig, QuoteToken, PoolCategory } from './types'
 const pools: PoolConfig[] = [
   {
     sousId: 0,
-    tokenName: 'NYAN',
+    tokenName: 'NYAN2',
     stakingTokenName: QuoteToken.NYAN,
     stakingTokenAddress: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
     contractAddress: {

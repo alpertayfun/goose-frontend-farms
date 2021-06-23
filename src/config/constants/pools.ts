@@ -7,8 +7,8 @@ const pools: PoolConfig[] = [
     stakingTokenName: QuoteToken.NYAN,
     stakingTokenAddress: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
     contractAddress: {
-      97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
-      56: '0xC885b97220ad6a8dfE4AC7aF7C7A4776c7A21f06',
+      97: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
+      56: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
     },
     poolCategory: PoolCategory.CORE,
     projectLink: 'https://pancakeswap.finance/',

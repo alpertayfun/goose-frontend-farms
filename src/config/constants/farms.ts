@@ -44,7 +44,7 @@ const farms: FarmConfig[] = [
       97: '0xD7A340Be68e5d115a871727F9189cca1886E811F',
       56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
     },
-    quoteTokenSymbol: QuoteToken.NYAN2,
+    quoteTokenSymbol: QuoteToken.NYAN,
     quoteTokenAdresses: contracts.cake,
   },
   {
@@ -59,7 +59,7 @@ const farms: FarmConfig[] = [
       97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
     },
-    quoteTokenSymbol: QuoteToken.NYAN2,
+    quoteTokenSymbol: QuoteToken.NYAN,
     quoteTokenAdresses: contracts.cake,
   },
   {
@@ -74,7 +74,7 @@ const farms: FarmConfig[] = [
       97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
     },
-    quoteTokenSymbol: QuoteToken.NYAN2,
+    quoteTokenSymbol: QuoteToken.NYAN,
     quoteTokenAdresses: contracts.cake,
   },
   {
@@ -89,7 +89,7 @@ const farms: FarmConfig[] = [
       97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
     },
-    quoteTokenSymbol: QuoteToken.NYAN2,
+    quoteTokenSymbol: QuoteToken.NYAN,
     quoteTokenAdresses: contracts.cake,
   },
   {
@@ -104,7 +104,7 @@ const farms: FarmConfig[] = [
       97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
     },
-    quoteTokenSymbol: QuoteToken.NYAN2,
+    quoteTokenSymbol: QuoteToken.NYAN,
     quoteTokenAdresses: contracts.cake,
   },
   {
@@ -119,7 +119,7 @@ const farms: FarmConfig[] = [
       97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
       56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
     },
-    quoteTokenSymbol: QuoteToken.NYAN2,
+    quoteTokenSymbol: QuoteToken.NYAN,
     quoteTokenAdresses: contracts.cake,
   },
   {

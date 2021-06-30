@@ -33,11 +33,11 @@ export default {
   },
   busd: {
     56: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
-    97: '',
+    97: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
   },
   ust: {
     56: '0x7ef95a0fee0dd31b22626fa2e10ee6a223f8a684',
-    97: '',
+    97: '0x7ef95a0fee0dd31b22626fa2e10ee6a223f8a684',
   },
   pancakeProfile: {
     56: '0xDf4dBf6536201370F95e06A0F8a7a70fE40E388a',

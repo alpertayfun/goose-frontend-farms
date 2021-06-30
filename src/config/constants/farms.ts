@@ -21,7 +21,7 @@ const farms: FarmConfig[] = [
     pid: 1,
     lpSymbol: 'NYAN2-BNB LP',
     lpAddresses: {
-      97: '0xe72a130D13350c36bfa54B8feBe75A727562eaC4',
+      97: '0x3AdCEB6afc3d0E4E93AF265e2F4530135fb8F44E',
       56: '0x76848b57b9ce6a73f6546de4143956a858f537c2',
     },
     tokenSymbol: 'NYAN2',

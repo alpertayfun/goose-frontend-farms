@@ -23,7 +23,7 @@ export enum QuoteToken {
   'BNB' = 'BNB',
   'CAKE' = 'CAKE',
   'SYRUP' = 'SYRUP',
-  'NYAN' = 'NYAN',
+  'NYAN' = 'NYAN2',
   'CATNIP' = 'CATNIP',
   'BUSD' = 'BUSD',
   'DAI' = 'DAI',

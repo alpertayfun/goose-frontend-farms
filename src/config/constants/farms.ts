@@ -26,7 +26,7 @@ const farms: FarmConfig[] = [
     },
     tokenSymbol: 'NYAN2',
     tokenAddresses: {
-      97: '0xD7A340Be68e5d115a871727F9189cca1886E811F',
+      97: '0xa7438fc5c3e4c6c476ef2e5de851c2ecaab20883',
       56: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
     },
     quoteTokenSymbol: QuoteToken.BNB,

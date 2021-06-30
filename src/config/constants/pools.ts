@@ -5,10 +5,10 @@ const pools: PoolConfig[] = [
     sousId: 0,
     tokenName: 'NYAN2',
     stakingTokenName: QuoteToken.NYAN,
-    stakingTokenAddress: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
+    stakingTokenAddress: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
     contractAddress: {
-      97: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
-      56: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
+      97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
+      56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
     },
     poolCategory: PoolCategory.CORE,
     projectLink: 'https://pancakeswap.finance/',

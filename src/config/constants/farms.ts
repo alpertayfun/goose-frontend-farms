@@ -36,13 +36,13 @@ const farms: FarmConfig[] = [
     pid: 2,
     lpSymbol: 'NYAN2-BUSD LP',
     lpAddresses: {
-      97: '0x2f7682b64b88149ba3250aee32db712964de5fa9',
-      56: '0xf8be3eaa26866995258892b277f4979991909884',
+      97: '0xd1534d5d8075ea84941ea30568e21d3313454b15',
+      56: '0xd1534d5d8075ea84941ea30568e21d3313454b15',
     },
     tokenSymbol: 'BUSD',
     tokenAddresses: {
-      97: '0xD7A340Be68e5d115a871727F9189cca1886E811F',
-      56: '0xd909840613fCb0fADC6ee7E5eCF30cDEf4281a68',
+      97: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
+      56: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
     },
     quoteTokenSymbol: QuoteToken.NYAN,
     quoteTokenAdresses: contracts.cake,

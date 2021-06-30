@@ -1,18 +1,18 @@
 import contracts from './contracts'
 import { FarmConfig, QuoteToken } from './types'
-
+//0xc970d43d330d8d591796bd93d42af9d65c271313
 const farms: FarmConfig[] = [
   {
     pid: 0,
     lpSymbol: 'NYAN2',
     lpAddresses: {
       97: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
-      56: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
+      56: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
     },
     tokenSymbol: 'CATNIP',
     tokenAddresses: {
-      97: '0x759a31a5087eE60BD57d74fC1088EC62F2c211af',
-      56: '0x45b07DF4FE00202dd31F2D95f6C06f3A029625D5',
+      97: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
+      56: '0xA7438fC5c3E4C6C476Ef2E5de851c2ECAAb20883',
     },
     quoteTokenSymbol: QuoteToken.BNB,
     quoteTokenAdresses: contracts.wbnb,

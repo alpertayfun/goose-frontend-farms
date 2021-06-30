@@ -32,11 +32,11 @@ export default {
     97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
   },
   busd: {
-    56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
+    56: '0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7',
     97: '',
   },
   ust: {
-    56: '0x23396cF899Ca06c4472205fC903bDB4de249D6fC',
+    56: '0x7ef95a0fee0dd31b22626fa2e10ee6a223f8a684',
     97: '',
   },
   pancakeProfile: {
@@ -56,7 +56,7 @@ export default {
     97: '',
   },
   dai: {
-    56: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
+    56: '0x8a9424745056Eb399FD19a0EC26A14316684e274',
     97: '',
   },
   claimRefund: {
